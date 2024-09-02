@@ -1,0 +1,46 @@
+<!-- logviewer/templates/logviewer/view_logs.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer</title>
+    <style>
+        body { font-family: Consolas; }
+        .log-info { color: green; }
+        .log-error { color: red; }
+        .log-debug { color: blue; }
+        .log-warning { color: orange; }
+        .log-critical { color: purple; }
+        pre {
+            {% comment %} white-space: pre-wrap;  {% endcomment %}
+            {% comment %} word-wrap: break-word;  {% endcomment %}
+            line-height: .4;  /* Adjust line height here */
+            margin: 0;         /* Remove default margin */
+        }
+    </style>
+</head>
+<body>
+    <h3><code>djgo logs</code></h3>
+    {% comment %} <pre> {% endcomment %}
+        <code>
+        {% for log in logs %}
+            {% if 'INFO' in log %}
+                <span class="log-info">{{ log }}</span> <br>
+            {% elif 'ERROR' in log %}
+                <span class="log-error">{{ log }}</span> <br>
+            {% elif 'DEBUG' in log %}
+                <span class="log-debug">{{ log }}</span> <br>
+            {% elif 'WARNING' in log %}
+                <span class="log-warning">{{ log }}</span> <br>
+            {% elif 'CRITICAL' in log %}
+                <span class="log-critical">{{ log }}</span> <br>
+            {% else %}
+                {{ log }}  <!-- Default styling for other log levels --> <br>
+            {% endif %}
+        {% endfor %}
+    </code>
+    {% comment %} </pre> {% endcomment %}
+</body>
+</html>

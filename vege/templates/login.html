@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+    table,th,td {
+    border:2px solid black;
+    border-color: green;
+    border-collapse:collapse;
+    padding:5px;
+    }
+
+
+{% endblock %}
+
+{% block content %}
+<form class="col-6 mx-auto card p-3 shadow-lg" method="post" >
+    {% csrf_token %}
+    <h2>Login</h2> <hr>
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>
+     <div class="alert alert-info" role="alert">
+            {{ message }}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" name="username" class="form-control" >
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" name='password' class="form-control">
+  </div>
+    <p>Don't have an account? <a href="/register/">register</a> </p>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+    table,th,td {
+    border:2px solid black;
+    border-color: blue;
+    border-collapse:collapse;
+    padding:5px;
+    }
+
+{% endblock %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div>
+    <br>
+  <p>user: {{user}}</p>
+    <p>data: {{ data }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>
+            <input type="text" name="username_input" required>
+            <br>
+            <br>
+            <input type="text" name="user_data">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>USER</th>
+            <th>DATA</th>
+            <th>Data entered</th>
+        </tr>
+
+        {% for user,data in all_user_data.items %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{user}}</td>
+            <td>{{data}}</td>
+            <td {% if data == "No data was entered for the user" %} style="background-color:red;" {% endif %}>
+                {% if data == "No data was entered for the user" %}
+                NO
+                {% else %}
+                Yes
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}

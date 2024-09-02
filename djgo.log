@@ -1,0 +1,72 @@
+INFO 2024-09-02 11:21:10,680 autoreload Watching for file changes with StatReloader
+INFO 2024-09-02 11:21:58,048 autoreload Watching for file changes with StatReloader
+INFO 2024-09-02 11:25:12,397 autoreload Watching for file changes with StatReloader
+INFO 2024-09-02 11:25:28,146 views Fetched queryset from database.
+INFO 2024-09-02 11:25:33,356 views Cached the serialized data.
+INFO 2024-09-02 11:25:33,385 basehttp "GET /vege/todo/ HTTP/1.1" 200 19852
+INFO 2024-09-02 11:25:40,092 views Fetched serialized data from cache.
+INFO 2024-09-02 11:25:40,093 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:25:48,820 views Fetched serialized data from cache.
+INFO 2024-09-02 11:25:48,821 basehttp "GET /vege/todo/?page=2 HTTP/1.1" 200 1351
+INFO 2024-09-02 11:26:17,179 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:17,180 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:26:38,069 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:38,069 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:26:40,402 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:41,653 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:41,654 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:26:52,781 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:52,782 basehttp "GET /vege/todo/?page=2 HTTP/1.1" 200 1351
+INFO 2024-09-02 11:26:56,815 views Fetched serialized data from cache.
+INFO 2024-09-02 11:26:56,816 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:27:00,198 views Fetched serialized data from cache.
+INFO 2024-09-02 11:27:00,199 basehttp "GET /vege/todo/?page=2 HTTP/1.1" 200 1351
+INFO 2024-09-02 11:27:10,735 views Fetched serialized data from cache.
+INFO 2024-09-02 11:27:10,736 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:01,540 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:01,541 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:13,639 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:13,640 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:15,966 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:15,967 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:18,321 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:18,322 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:20,439 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:20,440 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:23,136 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:23,137 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:44,133 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:44,134 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:46,379 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:46,380 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:28:58,780 views Fetched serialized data from cache.
+INFO 2024-09-02 11:28:58,781 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:00,930 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:00,931 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:02,869 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:02,870 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:05,125 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:05,126 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:07,473 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:07,474 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:09,733 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:11,569 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:11,570 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:13,754 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:13,755 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:20,069 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:20,070 basehttp "GET /vege/todo/?page=2 HTTP/1.1" 200 1351
+INFO 2024-09-02 11:29:54,579 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:54,580 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:29:56,980 views Fetched serialized data from cache.
+INFO 2024-09-02 11:29:56,981 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+ERROR 2024-09-02 11:39:20,659 views Error while fetching serialized data from cache: Error 111 connecting to localhost:6379. Connection refused.
+INFO 2024-09-02 11:39:20,659 views Fetched queryset from database.
+ERROR 2024-09-02 11:39:24,730 views Error occurred while caching serialized data: Error 111 connecting to localhost:6379. Connection refused.
+INFO 2024-09-02 11:39:24,731 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+ERROR 2024-09-02 11:39:26,610 views Error while fetching serialized data from cache: Error 111 connecting to localhost:6379. Connection refused.
+INFO 2024-09-02 11:39:26,610 views Fetched queryset from database.
+ERROR 2024-09-02 11:39:31,104 views Error occurred while caching serialized data: Error 111 connecting to localhost:6379. Connection refused.
+INFO 2024-09-02 11:39:31,104 basehttp "GET /vege/todo/ HTTP/1.1" 200 2073
+INFO 2024-09-02 11:53:23,428 autoreload /home/shubham/work/webd_projects/djgo/mydj/mydj/urls.py changed, reloading.
+INFO 2024-09-02 11:53:24,663 autoreload Watching for file changes with StatReloader
