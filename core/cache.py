@@ -10,10 +10,17 @@ from os import getenv
 # local redis server
 # redis_client = redis.Redis(host='localhost',port=6379,db=5)
 
-redis_client = redis.Redis(
-  host='redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com',
-  port=11304,
-  password=getenv('REDIS_PASS'))
+# connection to neon redis server
+redis_replica = redis.Redis(
+  host=getenv('REDIS_HOST_CLOUD'),
+  port=getenv('REDIS_PORT_CLOUD'),
+  password=getenv('REDIS_PASS_CLOUD'))
+
+# connection to redis oranage zebra 
+redis_main = redis.Redis(
+  host=getenv('REDIS_HOST_VERCEl'),
+  port=getenv('REDIS_PORT_VERCEL'),
+  password=getenv('REDIS_PASS_VERCEL'))
 
 
 # add value to 
@@ -21,23 +28,25 @@ def insert(key,val,ex=None):
     # pub("redis_cache","Todo {key} cached")
     val = json.dumps(val).encode('utf-8')
     if ex:
-        redis_client.set(key,val,ex)
+        redis_main.set(key,val,ex)
+        redis_replica.set(key,val,ex)
         return 
-    redis_client.set(key,val)
+    redis_main.set(key,val)
 
 def fetch(key):
     # pub("redis_cache","Todo {key} fetched")
-    if redis_client.exists(key):
-        data=redis_client.get(key).decode('utf-8')
+    if redis_main.exists(key):
+        data=redis_main.get(key).decode('utf-8')
         return json.loads(data)
     return None
 
 def delete(key):
     # pub("redis_cache","Todo  {key} deleted")
-    if redis_client.exists(key):
-        redis_client.delete(key)
+    if redis_main.exists(key):
+        redis_main.delete(key)
+        redis_replica.delete(key)
         return True
     return False
 
 def exists(key):
-    return bool (redis_client.exists(key))
+    return bool (redis_main.exists(key))
