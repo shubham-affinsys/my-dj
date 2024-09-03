@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .my_utils import my_cache
+from core import cache
 import json
 from .models import Student
 
@@ -8,21 +8,20 @@ from .models import Student
 def home(request, usr="guest"):
     user = usr
     data = "Guest has no data"
-    if my_cache.exists(user):
-        data = my_cache.fetch(user).decode('utf-8')
+    if cache.exists(user):
+        data = cache.fetch(user)
 
-    all_user_data = my_cache.get_all()
+    all_user_data ={"user":user,"data":data}
 
     if request.method == 'POST':
         user = request.POST.get('username_input')
         data = request.POST.get('user_data')
         if user:
-            if my_cache.exists(user):
-                data = my_cache.fetch(user).decode('utf-8')
-            else:
+            if cache.exists(user):
+                data = cache.fetch(user)
                 if data is None or data == "":
                     data = "No data was entered for the user"
-                my_cache.insert(user, data)
+                cache.insert(user, data)
         else:
             user = "guest"
             data = "Guest has no data"
@@ -42,3 +41,7 @@ def about(request):
 
     context = {'title': 'About'}
     return render(request, "about.html", context)
+
+
+def server_home(request):
+    return render(request,"server_home.html")
