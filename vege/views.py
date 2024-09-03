@@ -57,7 +57,7 @@ def post_recipes(request):
     if request.GET.get('search'):
         queryset = queryset.filter(recipe_name__icontains=request.GET.get('search'))
 
-    rabbitmq.publish_message(request.user,f"{request.user.username} --- request:GET --- data:all_recipes")
+    # rabbitmq.publish_message(request.user,f"{request.user.username} --- request:GET --- data:all_recipes")
     logger.info("All recipies fethed for user success")
     context = {'recipes': queryset}
     return render(request, 'recipes.html', context=context)

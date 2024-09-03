@@ -77,3 +77,7 @@ class TodoAPITests(APITestCase):
         self.assertEqual(response.data['count'], 3)  # Total count of todos
         self.assertEqual(len(response.data['results']), 3)  # Number of results on the first page
 
+import requests
+def test_recipes(){
+    response  = Request.get("")
+}
