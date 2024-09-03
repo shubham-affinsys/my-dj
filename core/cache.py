@@ -8,12 +8,12 @@ from os import getenv
 # from  core.redis_pub import pub
 
 # local redis server
-redis_client = redis.Redis(host='localhost',port=6379,db=5)
+# redis_client = redis.Redis(host='localhost',port=6379,db=5)
 
-# redis_client = redis.Redis(
-#   host='redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com',
-#   port=11304,
-#   password=getenv('REDIS_PASS'))
+redis_client = redis.Redis(
+  host='redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com',
+  port=11304,
+  password=getenv('REDIS_PASS'))
 
 
 # add value to 
