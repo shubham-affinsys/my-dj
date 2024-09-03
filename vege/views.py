@@ -26,7 +26,7 @@ from django.core.cache import cache
 from django.http import HttpResponse
 import logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("app")
 from django.http import JsonResponse
 
 from core import cache

@@ -222,51 +222,108 @@ CACHES = {
 # }
 
 
-
 import logging.config
 import os
 from django.utils.log import DEFAULT_LOGGING
 
-# Disable Django's logging setup
+# Disable Django's default logging configuration
 LOGGING_CONFIG = None
 
-LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
+# Set the log level based on an environment variable, default to 'INFO'
+LOGLEVEL = os.environ.get('LOGLEVEL', 'INFO').upper()
 
+# Configure logging
 logging.config.dictConfig({
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'default': {
-            # exact format is not important, this is the minimum information
             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
         },
         'django.server': DEFAULT_LOGGING['formatters']['django.server'],
     },
     'handlers': {
-        # console logs to stderr
+        # Console handler to output logs to stderr
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'default',
         },
+        # Django server handler for request logs
         'django.server': DEFAULT_LOGGING['handlers']['django.server'],
     },
     'loggers': {
-        # default for all undefined Python modules
+        # Root logger for all modules
         '': {
-            'level': 'WARNING',
+            'level': LOGLEVEL,
             'handlers': ['console'],
+            'propagate': False,
         },
-        # Our application code
+        # Application-specific logger
         'app': {
             'level': LOGLEVEL,
             'handlers': ['console'],
-            # Avoid double logging because of root logger
             'propagate': False,
         },
-        # Default runserver request logging
-        'django.server': DEFAULT_LOGGING['loggers']['django.server'],
+        # Logger for Django's runserver output
+        'django.server': {
+            'level': 'INFO',
+            'handlers': ['console'],
+            'propagate': False,
+        },
     },
 })
+
+# Create an application-specific logger
+logger = logging.getLogger('app')
+
+# Example usage of the logger
+logger.info("Logging is set up successfully!")
+
+
+# import logging.config
+# import os
+# from django.utils.log import DEFAULT_LOGGING
+
+# # Disable Django's logging setup
+# LOGGING_CONFIG = None
+
+# LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
+
+# logging.config.dictConfig({
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'default': {
+#             # exact format is not important, this is the minimum information
+#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+#         },
+#         'django.server': DEFAULT_LOGGING['formatters']['django.server'],
+#     },
+#     'handlers': {
+#         # console logs to stderr
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'default',
+#         },
+#         'django.server': DEFAULT_LOGGING['handlers']['django.server'],
+#     },
+#     'loggers': {
+#         # default for all undefined Python modules
+#         '': {
+#             'level': 'WARNING',
+#             'handlers': ['console'],
+#         },
+#         # Our application code
+#         'app': {
+#             'level': LOGLEVEL,
+#             'handlers': ['console'],
+#             # Avoid double logging because of root logger
+#             'propagate': False,
+#         },
+#         # Default runserver request logging
+#         'django.server': DEFAULT_LOGGING['loggers']['django.server'],
+#     },
+# })
 
 # LOGGING = {
 #     'version': 1,
