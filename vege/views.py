@@ -293,7 +293,7 @@ class TodoView(APIView):
 
         # Try fetching serialized data from cache
         try:
-            data = cache.fetch(f"todos_serialized_user_4{request.user.id}")
+            data = cache.fetch(f"todos_serialized_user_6{request.user.id}")
             if data:
                 logger.info("Fetched serialized data from cache.")
         except Exception as e:
@@ -308,7 +308,7 @@ class TodoView(APIView):
             data = serializer.data
 
             try:
-                cache.insert(f"todos_serialized_user_4{request.user.id}",data, 1000)  # Cache for 10 minutes
+                cache.insert(f"todos_serialized_user_6{request.user.id}",data, 30)  # Cache for 10 minutes
                 logger.info("Cached the serialized data.")
             except Exception as e:
                 logger.error(f"Error occurred while caching serialized data: {e}")
