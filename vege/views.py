@@ -440,16 +440,16 @@ def recipes(request):
 
     recipe = cache.fetch('all-recipes')
     if recipe:
-        logger.info("recipes fetched from cache")
+        logger.error("recipes fetched from cache")
         return Response(recipe)
     
     queryset = Recipe.objects.all().order_by('-recipe_view_count')
-    logger.info("DB accssed to fetch recipes")
+    logger.error("DB accssed to fetch recipes")
     serializer = RecipeSerializer(queryset,many=True)
 
     try:
         cache.insert('all-recipes',serializer.data,ex=30)
-        logger.info("Todo added to cache with timeout 10")
+        logger.error("Todo added to cache with timeout 10")
     except Exception as e:
         logger.error(f"Cannot connect to redis :{e}")
     
