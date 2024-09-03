@@ -191,19 +191,32 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
 }
+
 import redis
-r = redis.Redis(
-  host='redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com',
-  port=11304,
-  password=getenv('REDIS_PASS'))
+# r = redis.Redis(
+#   host='redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com',
+#   port=11304,
+#   password=getenv('REDIS_PASS_CLOUD'))
+
+
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.redis.RedisCache",
+#         "LOCATION": f"redis://default:{getenv('REDIS_PASS_CLOUD')}@redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com:11304",
+#         "OPTIONS":{
+#             "db":"cache-M0GJLON5",
+#             # "password":"getenv('REDIS_PASS')),
+#         }
+#     }
+# }
 
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": f"redis://default:{getenv('REDIS_PASS')}@redis-11304.c275.us-east-1-4.ec2.redns.redis-cloud.com:11304",
+        "LOCATION": f"redis://default:{getenv('REDIS_PASS_VERCEL')}@redis-14927.c256.us-east-1-2.ec2.redns.redis-cloud.com:14927",
         "OPTIONS":{
-            "db":"cache-M0GJLON5",
-            # "password":"getenv('REDIS_PASS')),
+            "db":"redis-orange-zebra",
         }
     }
 }
