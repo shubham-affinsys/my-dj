@@ -15,4 +15,4 @@ python-dotenv==1.0.1
 redis==5.0.8
 uvicorn==0.30.3
 vercel==0.2.1
-virtualenv==20.13.0+ds
+virtualenv==20.13.0
