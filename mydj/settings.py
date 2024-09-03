@@ -208,33 +208,33 @@ CACHES = {
     }
 }
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-        'bot': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename':os.path.join(BASE_DIR, 'djgo.log'),  # Ensure this path is correct and writable
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'bot_logger': {
-            'handlers': ['bot'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         },
+#         'bot': {
+#             'level': 'ERROR',
+#             'class': 'logging.FileHandler',
+#             'filename':os.path.join(BASE_DIR, 'djgo.log'),  # Ensure this path is correct and writable
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'INFO',
+#             'propagate': True,
+#         },
+#         'bot_logger': {
+#             'handlers': ['bot'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#     },
+# }
 
 # LOGGING = {
 #     'version': 1,
