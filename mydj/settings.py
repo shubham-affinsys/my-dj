@@ -236,50 +236,40 @@ CACHES = {
 #     },
 # }
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'formatters': {
-#         'verbose': {
-#             'format': '{levelname} {asctime} {module} {message}',
-#             'style': '{',
-#         },
-#         'simple': {
-#             'format': '{levelname} {message}',
-#             'style': '{',
-#         },
-#     },
-#     'handlers': {
-#         'console': {
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'verbose',
-#         },
-#         'file': {
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(BASE_DIR, 'djgo.log'),  # Change to your desired log file path
-#             'formatter': 'verbose',
-#         },
-#         'bot': {
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(BASE_DIR, 'djgo.log'),  # Change to your desired log file path
-#             'formatter': 'verbose',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console', 'file'],
-#             'level': 'INFO',  # Change to DEBUG for more detailed logs
-#             'propagate': True,
-#         },
-#         'mydj': {  
-#             'handlers': ['file'],
-#             'level': 'DEBUG',  # Log level for your app
-#             'propagate': False,
-#         },
-#           'bot_logger': {
-#             'handlers': ['bot'],
-#             'level': 'ERROR',
-#             'propagate': False,
-#         },
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'djgo.log'),  # Change to your desired log file path
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',  # Change to DEBUG for more detailed logs
+            'propagate': True,
+        },
+        'mydj': {  
+            'handlers': ['file'],
+            'level': 'DEBUG',  # Log level for your app
+            'propagate': False,
+        },
+    },
+}

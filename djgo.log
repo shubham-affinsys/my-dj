@@ -1,0 +1,6 @@
+INFO 2024-09-03 06:38:38,906 autoreload Watching for file changes with StatReloader
+INFO 2024-09-03 06:38:54,264 views Fetched serialized data from cache.
+INFO 2024-09-03 06:38:54,303 basehttp "GET /vege/todo/ HTTP/1.1" 200 19852
+INFO 2024-09-03 06:38:54,373 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+WARNING 2024-09-03 06:38:54,524 log Not Found: /favicon.ico
+WARNING 2024-09-03 06:38:54,525 basehttp "GET /favicon.ico HTTP/1.1" 404 3379
