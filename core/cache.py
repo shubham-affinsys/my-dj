@@ -29,7 +29,7 @@ def insert(key,val,ex=None):
     val = json.dumps(val).encode('utf-8')
     if ex:
         redis_main.set(key,val,ex)
-        redis_replica.set(key,val,ex)
+        # redis_replica.set(key,val,ex)
         return 
     redis_main.set(key,val)
 
@@ -44,7 +44,7 @@ def delete(key):
     # pub("redis_cache","Todo  {key} deleted")
     if redis_main.exists(key):
         redis_main.delete(key)
-        redis_replica.delete(key)
+        # redis_replica.delete(key)
         return True
     return False
 
