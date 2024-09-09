@@ -438,7 +438,8 @@ class TodoViewSet(viewsets.ModelViewSet):
 @api_view(['GET'])
 def recipes(request):
 
-    recipe = cache.fetch('all-recipes')
+    # recipe = cache.fetch('all-recipes')
+    recipe=None
     if recipe:
         logger.info("recipes fetched from cache")
         return Response(recipe)
@@ -448,9 +449,8 @@ def recipes(request):
     serializer = RecipeSerializer(queryset,many=True)
 
     try:
-        cache.insert('all-recipes',serializer.data,ex=30)
-        logger.info("Todo added to cache with timeout 10")
+        # cache.insert('all-recipes',serializer.data,ex=30)
+        logger.info("Recipes added to cache")
     except Exception as e:
         logger.error(f"Cannot connect to redis :{e}")
-    
     return Response(serializer.data)

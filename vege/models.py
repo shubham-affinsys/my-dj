@@ -2,17 +2,18 @@ import uuid
 
 from django.db import models
 from django.contrib.auth.models import User
-
+from core import media_cdn
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Recipe(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True,
-                             blank=True)  #CASCADE remove all recipes if user gets deleted SET_NUll or SET or SET DEFAULT
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True,blank=True)
     recipe_name = models.CharField(max_length=100)
     recipe_description = models.TextField()
-    recipe_image = models.ImageField(
-        upload_to="recipes/")  # in reality, we store them in CDN for faster access not locally
     recipe_view_count = models.IntegerField(default=1)
+
+    # recipe_image = models.ImageField(upload_to="recipes/")  
+    recipe_image = CloudinaryField('image',folder="recipes/") # CloudField automatically handles uload and retrival of images through cloudinary
     
     
     class Meta:
