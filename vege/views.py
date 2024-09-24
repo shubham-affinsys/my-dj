@@ -45,7 +45,7 @@ def post_recipes(request):
             recipe_description=recipe_description
         )
         logger.info("recipe stored successfully =====>", recipe.id)
-        return redirect("/vege/recipes/")
+        # return redirect("/vege/recipes/")
     
     queryset=None
     # queryset = cache.get('all_recipes')
