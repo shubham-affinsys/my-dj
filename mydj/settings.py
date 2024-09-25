@@ -268,23 +268,23 @@ logging.config.dictConfig({
     },
     'loggers': {
         # Root logger for all modules
-        '': {
-            'level': LOGLEVEL,
-            'handlers': ['console'],
-            'propagate': False,
-        },
+        # '': {
+        #     'level': LOGLEVEL,
+        #     'handlers': ['console'],
+        #     'propagate': False,
+        # },
         # Application-specific logger
         'app': {
-            'level': LOGLEVEL,
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        # Logger for Django's runserver output
-        'django.server': {
             'level': 'INFO',
             'handlers': ['console'],
             'propagate': False,
         },
+        # Logger for Django's runserver output
+        # 'django.server': {
+        #     'level': 'INFO',
+        #     'handlers': ['console'],
+        #     'propagate': False,
+        # },
     },
 })
 
